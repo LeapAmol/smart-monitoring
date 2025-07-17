@@ -1,0 +1,9 @@
+Defaults:zabbix !requiretty
+zabbix ALL=(ALL) NOPASSWD: /usr/sbin/smartctl,/etc/zabbix/scripts/smartctl-disks-discovery.pl
+Cmnd_Alias C_ZABBIX = \
+    /etc/zabbix/scripts/mdraid.sh, /etc/zabbix/scripts/mdraid.sh *
+
+zabbix ALL = (root) NOPASSWD: C_ZABBIX
+zabbix ALL=(ALL) NOPASSWD: /sbin/mdadm
+zabbix ALL=(ALL) NOPASSWD: /usr/sbin/smartctl
+zabbix ALL=(ALL) NOPASSWD: /etc/zabbix/scripts/mdraid.sh
